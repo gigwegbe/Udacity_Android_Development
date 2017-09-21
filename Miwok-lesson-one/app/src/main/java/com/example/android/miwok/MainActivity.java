@@ -30,10 +30,14 @@ public class MainActivity extends AppCompatActivity {
 
         // Set the content of the activity to use the activity_main.xml layout file
         setContentView(R.layout.activity_main);
+
+        NumbersClickListener clickListener = new NumbersClickListener();
+
+        // Find the view that shows the numbers category
+        TextView numbers = (TextView) findViewById(R.id.numbers);
+
+        //Set a clicklistner on that View
+        numbers.setOnClickListener(clickListener);
     }
-      public void openNumbersList(View view){
-        Intent i = new Intent(this, NumbersActivity.class);
-        startActivity(i);
-    }
-    }
+}
 
