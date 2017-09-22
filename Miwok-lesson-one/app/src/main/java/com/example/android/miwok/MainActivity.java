@@ -15,12 +15,17 @@
  */
 package com.example.android.miwok;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import static com.example.android.miwok.R.id.family;
+import static com.example.android.miwok.R.id.numbers;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -31,13 +36,60 @@ public class MainActivity extends AppCompatActivity {
         // Set the content of the activity to use the activity_main.xml layout file
         setContentView(R.layout.activity_main);
 
-        NumbersClickListener clickListener = new NumbersClickListener();
-
         // Find the view that shows the numbers category
-        TextView numbers = (TextView) findViewById(R.id.numbers);
+        final TextView numbers = (TextView) findViewById(R.id.numbers);
+        final TextView phrases = (TextView) findViewById(R.id.phrases);
+        final TextView family = (TextView) findViewById(R.id.family);
+        final TextView colors = (TextView) findViewById(R.id.colors);
 
         //Set a clicklistner on that View
-        numbers.setOnClickListener(clickListener);
+        numbers.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //Create a new intent to open the @link NumbersActivity
+                Toast.makeText(view.getContext(), "Open the list of numbers", Toast.LENGTH_SHORT).show();
+
+                Intent numbersIntent = new Intent(MainActivity.this, NumbersActivity.class);
+                //start the new activity
+                startActivity(numbersIntent);
+            }
+        });
+
+
+        phrases.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(view.getContext(), "Open the list of phrases", Toast.LENGTH_SHORT).show();
+
+                Intent phrasesIntent = new Intent(MainActivity.this, PhrasesActivity.class);
+                //start the new activity
+                startActivity(phrasesIntent);
+            }
+        });
+
+        family.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(view.getContext(), "Open the list of family", Toast.LENGTH_SHORT).show();
+
+                Intent familyIntent = new Intent(MainActivity.this, FamilyActivity.class);
+                //start the new activity
+                startActivity(familyIntent);
+            }
+        });
+
+
+        colors.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(view.getContext(), "Open the list of colors", Toast.LENGTH_SHORT).show();
+
+                Intent colorsIntent = new Intent(MainActivity.this, ColorsActivity.class);
+                //start the new activity
+                startActivity(colorsIntent);
+            }
+        });
+
     }
 }
 
