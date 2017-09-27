@@ -23,6 +23,8 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
+import static com.example.android.miwok.R.id.rootView;
+
 public class NumbersActivity extends AppCompatActivity {
 
     @Override
@@ -44,12 +46,17 @@ public class NumbersActivity extends AppCompatActivity {
         words.add("nine");
         words.add("ten");
 
+
+        //Find the root view of the whole layout
         LinearLayout rootView = (LinearLayout) findViewById(R.id.rootView);
-        TextView wordView = new TextView(this);
-        wordView.setText(words.get(0));
-        wordView.setText(words.get(1));
 
-
-
+        // Create a variable to keep track of the current index position
+        int index = 0;
+        while (index < words.size()){
+            TextView wordView = new TextView(this);
+            wordView.setText(words.get(index));
+            rootView.addView(wordView);
+            index = index + 1;
+        }
     }
 }
