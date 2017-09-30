@@ -50,13 +50,26 @@ public class NumbersActivity extends AppCompatActivity {
         //Find the root view of the whole layout
         LinearLayout rootView = (LinearLayout) findViewById(R.id.rootView);
 
-        // Create a variable to keep track of the current index position
-        int index = 0;
-        while (index < words.size()){
+        //Create a variable to keep track of the current index position
+        //int index = 0;
+        // while (index < words.size()){
+        //   TextView wordView = new TextView(this);
+        //    wordView.setText(words.get(index));
+        //   rootView.addView(wordView);
+        //   index = index + 1;
+        //}
+
+
+        for(int index = 0; index < words.size(); index++){
+            //Create a new TextView
             TextView wordView = new TextView(this);
+
+            //Set the text to be word at the current index
             wordView.setText(words.get(index));
+
+            //Add this TextView as another child to the root view of this layout
             rootView.addView(wordView);
-            index = index + 1;
+
         }
     }
 }
