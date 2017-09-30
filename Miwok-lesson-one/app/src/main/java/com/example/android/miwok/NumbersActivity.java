@@ -67,7 +67,7 @@ public class NumbersActivity extends AppCompatActivity {
             //Set the text to be word at the current index
             wordView.setText(words.get(index));
 
-            //Add this TextView as another child to the root view of this layout
+            //Add this TextView as another child to the root view of this layout --
             rootView.addView(wordView);
 
         }
