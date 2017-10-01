@@ -18,12 +18,13 @@ package com.example.android.miwok;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutCompat;
+import android.widget.ArrayAdapter;
 import android.widget.LinearLayout;
+import android.widget.ListView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
 
-import static com.example.android.miwok.R.id.rootView;
 
 public class NumbersActivity extends AppCompatActivity {
 
@@ -47,29 +48,19 @@ public class NumbersActivity extends AppCompatActivity {
         words.add("ten");
 
 
-        //Find the root view of the whole layout
-        LinearLayout rootView = (LinearLayout) findViewById(R.id.rootView);
+        //Create an ArrayAdapter, whose data source is a list of Strings.
+        //The adapter knows how to create layouts for each item in the list, using the
+        // simple_list_item_1.xml layout resource defined in the Android framework.
+        ArrayAdapter<String> itemsAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, words);
 
-        //Create a variable to keep track of the current index position
-        //int index = 0;
-        // while (index < words.size()){
-        //   TextView wordView = new TextView(this);
-        //    wordView.setText(words.get(index));
-        //   rootView.addView(wordView);
-        //   index = index + 1;
-        //}
-
-
-        for(int index = 0; index < words.size(); index++){
-            //Create a new TextView
-            TextView wordView = new TextView(this);
-
-            //Set the text to be word at the current index
-            wordView.setText(words.get(index));
-
-            //Add this TextView as another child to the root view of this layout --
-            rootView.addView(wordView);
+        //Find the ListView object in the view hierachy of the Activity
+        //There should be a ListView with the view ID called list, which is declared in the activity_numbers.xml layout file
+        ListView listView = (ListView) findViewById(R.id.list);
+        // The listview will display list items for each word in the list of words.
+        //Do this by calling the setAdapter method on the ListView object and pass in the 1 argument
+        // which is the ArrayAdapter with the variable name itemsAdapter.
+        listView.setAdapter(itemsAdapter);
 
         }
     }
-}
+
