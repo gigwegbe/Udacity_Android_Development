@@ -18,7 +18,9 @@ package com.example.android.miwok;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutCompat;
+import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.GridView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -55,11 +57,11 @@ public class NumbersActivity extends AppCompatActivity {
 
         //Find the ListView object in the view hierachy of the Activity
         //There should be a ListView with the view ID called list, which is declared in the activity_numbers.xml layout file
-        ListView listView = (ListView) findViewById(R.id.list);
+        GridView gridView = (GridView) findViewById(R.id.gridlist);
         // The listview will display list items for each word in the list of words.
         //Do this by calling the setAdapter method on the ListView object and pass in the 1 argument
         // which is the ArrayAdapter with the variable name itemsAdapter.
-        listView.setAdapter(itemsAdapter);
+        gridView.setAdapter(itemsAdapter);
 
         }
     }
