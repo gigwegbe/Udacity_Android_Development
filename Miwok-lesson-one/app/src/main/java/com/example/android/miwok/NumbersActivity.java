@@ -57,11 +57,11 @@ public class NumbersActivity extends AppCompatActivity {
 
         //Find the ListView object in the view hierachy of the Activity
         //There should be a ListView with the view ID called list, which is declared in the activity_numbers.xml layout file
-        GridView gridView = (GridView) findViewById(R.id.gridlist);
+        ListView listView = (ListView) findViewById(R.id.listView);
         // The listview will display list items for each word in the list of words.
         //Do this by calling the setAdapter method on the ListView object and pass in the 1 argument
         // which is the ArrayAdapter with the variable name itemsAdapter.
-        gridView.setAdapter(itemsAdapter);
+        listView.setAdapter(itemsAdapter);
 
         }
     }
