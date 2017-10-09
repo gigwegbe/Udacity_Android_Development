@@ -38,7 +38,7 @@ public class NumbersActivity extends AppCompatActivity {
         // Add words here using ArrayList
         ArrayList<String> words = new ArrayList<String>();
 
-        words.add("one");
+       // words.add("one");
         words.add("two");
         words.add("three");
         words.add("four");
@@ -51,18 +51,18 @@ public class NumbersActivity extends AppCompatActivity {
 
 
         //Create an ArrayAdapter, whose data source is a list of Strings.
-        //The adapter knows how to create layouts for each item in the list, using the
-        // simple_list_item_1.xml layout resource defined in the Android framework.
-        ArrayAdapter<String> itemsAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, words);
+    //The adapter knows how to create layouts for each item in the list, using the
+    // simple_list_item_1.xml layout resource defined in the Android framework.
+    ArrayAdapter<String> itemsAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, words);
 
-        //Find the ListView object in the view hierachy of the Activity
-        //There should be a ListView with the view ID called list, which is declared in the activity_numbers.xml layout file
-        ListView listView = (ListView) findViewById(R.id.listView);
-        // The listview will display list items for each word in the list of words.
-        //Do this by calling the setAdapter method on the ListView object and pass in the 1 argument
-        // which is the ArrayAdapter with the variable name itemsAdapter.
+    //Find the ListView object in the view hierachy of the Activity
+    //There should be a ListView with the view ID called list, which is declared in the activity_numbers.xml layout file
+    ListView listView = (ListView) findViewById(R.id.listView);
+    // The listview will display list items for each word in the list of words.
+    //Do this by calling the setAdapter method on the ListView object and pass in the 1 argument
+    // which is the ArrayAdapter with the variable name itemsAdapter.
         listView.setAdapter(itemsAdapter);
 
-        }
+}
     }
 
